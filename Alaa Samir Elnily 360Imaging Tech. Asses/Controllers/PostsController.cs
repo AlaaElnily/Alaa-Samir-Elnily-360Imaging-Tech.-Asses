@@ -20,14 +20,14 @@ namespace Alaa_Samir_Elnily_360Imaging_Tech._Asses.Controllers
             _context = context;
         }
 
-        // GET: api/Posts
+        //get all posts
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Post>>> GetPosts()
         {
             return await _context.Posts.ToListAsync();
         }
 
-        // GET: api/Posts/5
+        //get post by id
         [HttpGet("{id}")]
         public async Task<ActionResult<Post>> GetPost(int id)
         {
@@ -41,8 +41,7 @@ namespace Alaa_Samir_Elnily_360Imaging_Tech._Asses.Controllers
             return post;
         }
 
-        // PUT: api/Posts/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //update post
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPost(int id, Post post)
         {
@@ -72,8 +71,7 @@ namespace Alaa_Samir_Elnily_360Imaging_Tech._Asses.Controllers
             return NoContent();
         }
 
-        // POST: api/Posts
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //add post
         [HttpPost]
         public async Task<ActionResult<Post>> PostPost(Post post)
         {
@@ -83,7 +81,7 @@ namespace Alaa_Samir_Elnily_360Imaging_Tech._Asses.Controllers
             return CreatedAtAction("GetPost", new { id = post.PostId }, post);
         }
 
-        // DELETE: api/Posts/5
+        //delete post
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePost(int id)
         {
